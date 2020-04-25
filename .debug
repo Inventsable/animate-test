@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionList>
+    <Extension Id="com.animate-test.panel">
+        <HostList>
+            <Host Name="AEFT" Port="1182" />
+            <Host Name="PHXS" Port="1183" />
+            <Host Name="FLPR" Port="1184" />
+        </HostList>
+    </Extension>
+</ExtensionList>
