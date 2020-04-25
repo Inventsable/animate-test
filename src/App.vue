@@ -1,22 +1,25 @@
 <template>
-  <div id="app">
-    <Panel>
-      <HelloWorld msg="Bombino basic" />
-    </Panel>
-    <Menus refresh :context="[
-      {
-        label: 'Test script',
-        callback: this.testScript
-      }
-    ]" />
-  </div>
+    <div id="app">
+        <Panel>
+            <HelloWorld msg="Bombino basic" />
+        </Panel>
+        <Menus
+            refresh
+            :context="[
+                {
+                    label: 'Test script',
+                    callback: this.testScript,
+                },
+            ]"
+        />
+    </div>
 </template>
 
 <script>
-// Utility components, see here:
-// https://github.com/Inventsable/lokney
-import { Menus, Panel } from "lokney";
-/*
+    // Utility components, see here:
+    // https://github.com/Inventsable/lokney
+    import { Menus, Panel } from "lokney";
+    /*
   Panel component above also includes:
     - Starlette UI theme and color library: 
       https://github.com/Inventsable/starlette
@@ -30,24 +33,22 @@ import { Menus, Panel } from "lokney";
   - Need CSInterface or a script? You can use the script-path attribute of Panel to launch scripts or utilities:
     https://github.com/Inventsable/lokney/tree/master/components/Panel
 */
-import { evalScript } from 'cluecumber'
-
-export default {
-  name: "App",
-  components: {
-    Menus,
-    Panel,
-    HelloWorld: require('./components/HelloWorld.vue').default
-  },
-  methods: {
-    async testScript() {
-      console.log('Testing script...')
-      let result = await evalScript('testScript()');
-      console.log(`Result is ${result}`)
-    }
-  }
-};
+    import { evalScript } from "cluecumber";
+    export default {
+        name: "App",
+        components: {
+            Menus,
+            Panel,
+            HelloWorld: require("./components/HelloWorld.vue").default,
+        },
+        methods: {
+            async testScript() {
+                console.log("Testing script...");
+                let result = await evalScript("testScript()");
+                console.log(`Result is ${result}`);
+            },
+        },
+    };
 </script>
 
-<style>
-</style>
+<style></style>
